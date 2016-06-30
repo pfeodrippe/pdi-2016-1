@@ -16,7 +16,7 @@ def psnr(imageA, imageB):
 def test_for_image(n, k):
 	number = str(n).zfill(2)
 	with open(os.devnull, 'w') as devnull:
-		output = subprocess.check_output(('./../binarizewolfjolion-cpp/binarize -k ' + str(k) + ' ../original_images/H' + number + '.png ../processed_images/P' + number + '.png').split(), stderr=devnull)
+		output = subprocess.check_output(('./../binarizewolfjolion-cpp/binarize -k ' + str(0.2) + ' ../original_images/H' + number + '.png ../processed_images/P' + number + '.png').split(), stderr=devnull)
 
 def load_image(n): 
 	number = str(n).zfill(2)
@@ -27,7 +27,7 @@ def load_image(n):
 	return (original, contrast)
 
 def search_for_best_in_image(n):
-	offset = 0.1
+	offset = 0.01
 	k = 0.5
 	flag = True
 	processed_numbers = []
